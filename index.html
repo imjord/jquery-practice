@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Form Practice</title>
+</head>
+<body>
+    <h1> Jquery Course </h1>
+    <form>
+        <div class="content">
+
+            <div> <h1>First</h1>
+            This is the first page of the form <div> <a href="#">next  </a>
+            </div> 
+            </div>
+           <div class="step">
+               <h1> Second</h1>
+               this is the second page
+               <div>
+                   <a href="#"> Next 
+
+                   </a>
+               </div>
+            <div class="step">
+                <h1> third </h1>
+                this is the third page
+                <div>
+                    <a href="#"> Next 
+                        
+                    </a>
+                </div>
+            </div>
+           </div>
+        </div>
+    </form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><script>
+
+    $(document).ready(function(){
+        
+            $('.step').css('display', 'none')
+            $('a').click(function(event){
+                console.log('clocked')
+            })
+
+    })
+
+
+</script>
+</body>
+</html>
