@@ -10,39 +10,49 @@
     <form>
         <div class="content">
 
-            <div> <h1>First</h1>
-            This is the first page of the form <div> <a href="#">next  </a>
-            </div> 
+            <div class="step"> <h1>First</h1>
+                This is the first page of the form
+             <div> 
+                    <a href="#">next  </a>
+             </div> 
             </div>
-           <div class="step">
+           <div class="step hiddenStep">
                <h1> Second</h1>
                this is the second page
                <div>
-                   <a href="#"> Next 
-
-                   </a>
+                   <a href="#"> Next</a>
                </div>
-            <div class="step">
+            </div>
+            <div class="step hiddenStep">
                 <h1> third </h1>
                 this is the third page
                 <div>
-                    <a href="#"> Next 
-                        
-                    </a>
+                    <a href="#"> Next</a>
                 </div>
             </div>
-           </div>
+           
         </div>
     </form>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><script>
 
     $(document).ready(function(){
+        $('.hiddenStep').css('display', 'none');
         
-            $('.step').css('display', 'none')
-            $('a').click(function(event){
-                console.log('clocked')
+            // $('.step').css('display', 'none')
+            $('a[href="#"]').click(function(event){
+                
+                event.preventDefault();
+    
+                var parent = $(this).closest('.step');
+                var mainContent = $('.content>.step');
+                var index = mainContent.index(parent)+1;
+
+                parent.css('display','none');
+                mainContent.eq(index).css('display','block');
+
             })
 
+            
     })
 
 
